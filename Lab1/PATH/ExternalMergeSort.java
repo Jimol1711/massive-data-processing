@@ -34,6 +34,15 @@ import org.mdp.utils.MemStats;
 import java.util.PriorityQueue;
 import java.util.Comparator;
 
+// ENTREGABLE Lab1 - Juan Ignacio Molina - CC6205 Otoño 2025
+// El mayor valor de v en disco fue 13. Los 5 mejores 13-gramas fueron los siguientes:
+// 
+// 0000006704   tenía una población de habitantes y una densidad poblacional de personas por km
+// 0000005893	en el año tenía una población de habitantes y una densidad poblacional de
+// 0000005892	año tenía una población de habitantes y una densidad poblacional de personas por
+// 0000005871	el año tenía una población de habitantes y una densidad poblacional de personas
+// 0000002144	es una población y comuna francesa en la región de lorena departamento de
+
 /**
  * Main method to run an external merge sort.
  * Batches of lines from the input are read into memory and sorted.
@@ -42,14 +51,6 @@ import java.util.Comparator;
  * The bigger the batches (in general), the faster the sort.
  * But get too close to the Heap limit and you'll run into trouble.
  * 
- * ENTREGABLE
- * El mayor valor de v en disco fue 13. Los 5 mejores 13-gramas fueron los siguientes:
- * 
- * 0000006704	tenía una población de habitantes y una densidad poblacional de personas por km
- * 0000005893	en el año tenía una población de habitantes y una densidad poblacional de
- * 0000005892	año tenía una población de habitantes y una densidad poblacional de personas por
- * 0000005871	el año tenía una población de habitantes y una densidad poblacional de personas
- * 0000002144	es una población y comuna francesa en la región de lorena departamento de
  * 
  * @author Aidan
  */

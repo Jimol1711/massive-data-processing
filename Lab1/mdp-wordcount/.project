@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>PATH</name>
+			<type>2</type>
+			<location>D:/repos/Patos/Lab1/PATH</location>
+		</link>
+	</linkedResources>
 </projectDescription>

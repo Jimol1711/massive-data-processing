@@ -27,3 +27,4 @@ replay_pid*
 *.gz
 *.txt
 /.metadata/
+mdp-rmi/

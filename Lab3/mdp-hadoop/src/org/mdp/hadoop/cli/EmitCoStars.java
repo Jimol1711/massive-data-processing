@@ -66,6 +66,14 @@ public class EmitCoStars {
 				Context output)
 						throws IOException, InterruptedException {
 			//TODO implement the map
+			String[] split = valueIn.toString().split("\t");
+
+			if (split[3].equals(THEATRICAL_MOVIE)) {
+				Text keyOut = new Text(split[1]+"##"+split[2]);
+				Text valueOut = new Text(split[0]);
+				output.write(keyOut, valueOut);
+			}
+
 		}
 	}
 
@@ -98,6 +106,23 @@ public class EmitCoStars {
 		public void reduce(Text key, Iterable<Text> values,
 				Context output) throws IOException, InterruptedException {
 			//TODO implement the reduce
+			ArrayList<String> list = new ArrayList<String>();
+
+			for (Text valueIn : values) {
+				list.add(valueIn.toString());
+			}
+
+			sortAndDeduplicate(list);
+
+			for (int i = 0; i < list.size(); i++) {
+				for (int j = i + 1; j < list.size(); j++) {
+					Text keyOut = new Text(list.get(i)+"##"+list.get(j));
+					IntWritable valueOut = new IntWritable(1);
+					output.write(keyOut, valueOut);
+				}
+			}
+
+
 		}
 
 		private static void sortAndDeduplicate(ArrayList<String> list) {
@@ -137,6 +162,13 @@ public class EmitCoStars {
 		// (5) job's mapper class
 		// (6) job's combiner class (only if applicable)
 		// (7) job's reducer class
+		job.setMapOutputKeyClass(Text.class);
+		job.setMapOutputValueClass(Text.class);
+		job.setOutputKeyClass(Text.class);
+		job.setOutputValueClass(IntWritable.class);
+
+		job.setMapperClass(EmitCoStarsMapper.class);
+		job.setReducerClass(EmitCoStarsReducer.class);
 		
 		FileInputFormat.setInputPaths(job, new Path(inputLocation));
 		FileOutputFormat.setOutputPath(job, new Path(outputLocation));

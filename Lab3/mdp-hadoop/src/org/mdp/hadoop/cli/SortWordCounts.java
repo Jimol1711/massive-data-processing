@@ -118,6 +118,7 @@ public class SortWordCounts {
 		String outputLocation = otherArgs[1];
 
 		Job job = Job.getInstance(new Configuration());
+
 		job.setMapOutputKeyClass(DescendingIntWritable.class);
 		job.setMapOutputValueClass(Text.class);
 		job.setOutputKeyClass(Text.class);

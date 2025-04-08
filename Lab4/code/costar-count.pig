@@ -33,3 +33,4 @@ ordered_actor_pair_count = ORDER actor_pair_count BY count DESC;
 -- TODO: REPLACE ahogan WITH YOUR FOLDER
 STORE ordered_actor_pair_count INTO 'hdfs://cm:9000/uhadoop2025/holaquetal/imdb-costars/';
 
+-- to see results: hdfs dfs -cat /uhadoop2025/holaquetal/imdb-goodactors/part-r-00000

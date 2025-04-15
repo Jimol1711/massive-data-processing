@@ -10,7 +10,6 @@ Deliverables and files for Lab n.
 
 ---
 
-
 ## File: `.gitignore`
 
 General purpose gitignore file.

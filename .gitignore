@@ -28,3 +28,7 @@ replay_pid*
 *.txt
 /.metadata/
 mdp-rmi/
+
+# other
+HDFS.txt
+.venv

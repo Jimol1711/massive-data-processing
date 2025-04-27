@@ -12,7 +12,7 @@ if __name__ == "__main__":
     fileout = sys.argv[2]
 
     # in pyspark shell start with:
-    #   filein = "hdfs://cm:9000/uhadoop/shared/imdb/imdb-ratings-two.tsv"
+    #   filein = "hdfs://cm:9000/uhadoop/shared/imdb/imdb-ratings.tsv"
     #   fileout = "hdfs://cm:9000/uhadoop2025/holaquetal/info-series-rating.py/"
     # and continue line-by-line from here
 

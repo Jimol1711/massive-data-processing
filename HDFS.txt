@@ -1,0 +1,38 @@
+1. Connect through SSH:
+
+ssh -p 220 uhadoop@cm.dcc.uchile.cl
+
+The password is:
+
+HADcc5212$oop
+
+2. Copy the JAR file to the server:
+...
+
+3. Execute pyspark script:
+
+spark-submit --master spark://cluster-01:7077 AverageSeriesRating.py hdfs://cm:9000/uhadoop/shared/imdb/imdb-ratings-two.tsv  hdfs://cm:9000/uhadoop2025/holaquetal/series-avg-two-py/
+
+The file is in:
+hdfs://cm:9000/uhadoop/shared/imdb/imdb-ratings-two.tsv
+
+It has to be outputed to:
+hdfs://cm:9000/uhadoop2025/holaquetal/info-series-rating-py/
+
+Copy the .py file to the server (in powershell in the directory where the file is):
+scp -P 220 ./<file>.py uhadoop@cm.dcc.uchile.cl:/data/2025/uhadoop/holaquetal/
+
+Run pyspark shell:
+pyspark --master spark://cluster-01:7077
+
+Run the script:
+spark-submit --master spark://cluster-01:7077 /data/2025/uhadoop/holaquetal/InfoSeriesRating.py hdfs://cm:9000/uhadoop/shared/imdb/imdb-ratings.tsv hdfs://cm:9000/uhadoop2025/holaquetal/info-series-rating-py/
+
+Delete output dir:
+hdfs dfs -rm -r /uhadoop2025/holaquetal/info-series-rating-py/
+
+SAVE
+hdfs dfs -ls /uhadoop2025/amoya/series-info-py/
+
+The Simpsons#1989       Homer's Enemy (#8.23)   9.3     7.143438320209976
+Breaking Bad#2008       Ozymandias (#5.14)      10.0    8.961290322580643

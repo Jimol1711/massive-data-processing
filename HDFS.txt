@@ -6,8 +6,8 @@ The password is:
 
 HADcc5212$oop
 
-2. Copy the JAR file to the server:
-...
+2. Copy the JAR file to the server (in powershell in the directory where the file is):
+scp -P 220 ./<file>.jar uhadoop@cm.dcc.uchile.cl:/data/2025/uhadoop/holaquetal/
 
 3. Execute pyspark script:
 
@@ -36,3 +36,5 @@ hdfs dfs -ls /uhadoop2025/amoya/series-info-py/
 
 The Simpsons#1989       Homer's Enemy (#8.23)   9.3     7.143438320209976
 Breaking Bad#2008       Ozymandias (#5.14)      10.0    8.961290322580643
+
+4. 

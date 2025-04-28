@@ -13,3 +13,9 @@ Deliverables and files for Lab n.
 ## File: `.gitignore`
 
 General purpose gitignore file.
+
+---
+
+## File: `HDFS.txt`
+
+.txt file with commands used throughout Labs.

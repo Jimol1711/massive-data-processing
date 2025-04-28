@@ -40,7 +40,10 @@ Breaking Bad#2008       Ozymandias (#5.14)      10.0    8.961290322580643
 PUT:
 java -jar mdp-kafka.jar PrintEarthquakeTweets holaquetal-tweets
 
+java -jar mdp-kafka.jar EarthquakeFilter holaquetal-tweets holaquetal-tweets-earthquake
 
-java -jar mdp-kafka.jar TwitterSimulator  /data/uhadoop/shared/twitter/tweets 20170919.tsv.gz holaquetal-tweets 1000
+java -jar mdp-kafka.jar BurstDetector holaquetal-tweets-earthquake
 
-[kafka-producer-network-thread | producer-1] WARN org.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node -1 could not be established. Broker may not be available.
+java -jar mdp-kafka.jar TwitterSimulator /data/uhadoop/shared/twitter/tweets_20170919.tsv.gz holaquetal-tweets 1000
+
+

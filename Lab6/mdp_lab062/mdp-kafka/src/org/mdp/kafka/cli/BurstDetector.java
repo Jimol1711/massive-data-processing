@@ -62,7 +62,7 @@ public class BurstDetector {
                             inEvent = true;
                             events++;
                             System.out.println("START event-id:" + events + ": start:" + oldest.timestamp() + " value:" + oldest.value() + " rate:" + FIFO_SIZE + " records in " + gap + " ms");
-                        } else if (gap >= EVENT_TIME_INTERVAL && inEvent) {
+                        } else if (gap >= EVENT_END_TIME_INTERVAL && inEvent) {
                             inEvent = false;
                             System.out.println("END event:" + events + " rate:" + FIFO_SIZE + "records in " + gap + "ms");
                         }

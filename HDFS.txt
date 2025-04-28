@@ -37,4 +37,10 @@ hdfs dfs -ls /uhadoop2025/amoya/series-info-py/
 The Simpsons#1989       Homer's Enemy (#8.23)   9.3     7.143438320209976
 Breaking Bad#2008       Ozymandias (#5.14)      10.0    8.961290322580643
 
-4. 
+PUT:
+java -jar mdp-kafka.jar PrintEarthquakeTweets holaquetal-tweets
+
+
+java -jar mdp-kafka.jar TwitterSimulator  /data/uhadoop/shared/twitter/tweets 20170919.tsv.gz holaquetal-tweets 1000
+
+[kafka-producer-network-thread | producer-1] WARN org.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node -1 could not be established. Broker may not be available.

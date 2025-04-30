@@ -6,8 +6,9 @@ The password is:
 
 HADcc5212$oop
 
-2. Copy the JAR file to the server (in powershell in the directory where the file is):
+2. Copy the JAR/PY file to the server (in powershell in the directory where the file is):
 scp -P 220 ./<file>.jar uhadoop@cm.dcc.uchile.cl:/data/2025/uhadoop/holaquetal/
+scp -P 220 ./<file>.py uhadoop@cm.dcc.uchile.cl:/data/2025/uhadoop/holaquetal/
 
 3. Execute pyspark script:
 
@@ -46,4 +47,10 @@ java -jar mdp-kafka.jar BurstDetector holaquetal-tweets-earthquake
 
 java -jar mdp-kafka.jar TwitterSimulator /data/uhadoop/shared/twitter/tweets_20170919.tsv.gz holaquetal-tweets 1000
 
+7.
+
+Create topic:
+kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic holaquetal-hashtags
+
+Copy py file:
 

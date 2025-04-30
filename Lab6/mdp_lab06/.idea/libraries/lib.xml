@@ -1,0 +1,25 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mdp-kafka/lib/jackson-core-2.9.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mdp-kafka/lib/slf4j-api-1.7.25.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mdp-kafka/lib/zookeeper-3.4.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mdp-kafka/lib/kafka_2.12-2.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mdp-kafka/lib/scala-logging_2.12-3.9.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mdp-kafka/lib/jopt-simple-5.0.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mdp-kafka/lib/jackson-databind-2.9.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mdp-kafka/lib/zkclient-0.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mdp-kafka/lib/lz4-java-1.4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mdp-kafka/lib/slf4j-simple-1.7.25.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mdp-kafka/lib/scala-reflect-2.12.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mdp-kafka/lib/kafka-clients-2.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mdp-kafka/lib/metrics-core-2.2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mdp-kafka/lib/jackson-annotations-2.9.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mdp-kafka/lib/scala-library-2.12.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mdp-kafka/lib/snappy-java-1.1.7.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mdp-kafka/lib/audience-annotations-0.5.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

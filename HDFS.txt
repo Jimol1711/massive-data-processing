@@ -52,5 +52,8 @@ java -jar mdp-kafka.jar TwitterSimulator /data/uhadoop/shared/twitter/tweets_201
 Create topic:
 kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic holaquetal-hashtags
 
-Copy py file:
 
+8.
+java -jar mdp-elasticsearch.jar BuildWikiIndexBulk -i /data/uhadoop/shared/wiki/es-wiki-articles.tsv.gz -igz -o <FALTA>
+
+java -jar mdp-elasticsearch.jar SearchWikiIndex -i holaquetal

@@ -139,6 +139,13 @@ public class BuildWikiIndexBulk {
 
 					// TODO: add the title, abstract (if available) and indexing time
 					// to the JSON document
+					json.put(FieldNames.TITLE.name(), tabs[1]);
+
+					if (tabs.length>2) {
+						json.put(FieldNames.ABSTRACT.name(), tabs[2]);
+					}
+
+					json.put(FieldNames.URL.name(), System.currentTimeMillis());
 
 					// add to bulk request
 					bulkJson.add(client.prepareIndex(indexName, "_doc").setSource(json, XContentType.JSON));

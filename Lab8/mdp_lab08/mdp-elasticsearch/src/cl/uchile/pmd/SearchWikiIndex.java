@@ -111,6 +111,8 @@ public class SearchWikiIndex {
 						multiMatchQueryBuilder.field(FieldNames.TITLE.name(), titleBoost);
 						
 						// TODO: add the abstract field to the fields searched
+						float absBoost = BOOSTS.get(FieldNames.ABSTRACT.name());
+						multiMatchQueryBuilder.field(FieldNames.ABSTRACT.name(),absBoost);
 						
 						// here we run the search, specifying how many results
 						// we want per "page" of results
@@ -121,9 +123,26 @@ public class SearchWikiIndex {
 						for (SearchHit hit : response.getHits().getHits()) {
 							// get the JSON data per field
 							Map<String, Object> json = hit.getSourceAsMap();
+
+							/*
 							String title = (String) json.get(FieldNames.TITLE.name());
 							
 							//TODO: get and print the title, url and abstract of each result
+							String url = (String) json.get(FieldNames.URL.name());
+							String abs = (String) json.get(FieldNames.ABSTRACT.name());
+							*/
+
+							// NEW: Added because of an error with casting
+							Object titleObj = json.get(FieldNames.TITLE.name());
+							Object urlObj = json.get(FieldNames.URL.name());
+							Object absObj = json.get(FieldNames.ABSTRACT.name());
+
+							String title = titleObj != null ? titleObj.toString() : "";
+							String url = urlObj != null ? urlObj.toString() : "";
+							String abs = absObj != null ? absObj.toString() : "";
+							// ENDNEW
+
+							System.out.println((hit.getIndex()) + "\t" + url + "\t" + title + "\t" + abs + "\t" + hit.getScore());
 						}
 					} catch (Exception e) {
 						System.err.println("Error with query '" + line + "'");

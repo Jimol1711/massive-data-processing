@@ -33,3 +33,4 @@ mdp-rmi/
 # HDFS.txt
 .venv
 patos-venv
+data/

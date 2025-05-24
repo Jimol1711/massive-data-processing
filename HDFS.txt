@@ -57,3 +57,19 @@ kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --par
 java -jar mdp-elasticsearch.jar BuildWikiIndexBulk -i /data/uhadoop/shared/wiki/es-wiki-articles.tsv.gz -igz -o <FALTA>
 
 java -jar mdp-elasticsearch.jar SearchWikiIndex -i holaquetal
+
+9.
+
+giraph mdp-giraph.jar org.mdp.hadoop.cli.PageRank -eif org.mdp.hadoop.io.TextNullTextEdgeInputFormat -eip /uhadoop/shared/pr/pr-ex.tsv -vof org.mdp.hadoop.io.VertexValueTextOutputFormat -op /uhadoop2025/holaquetal/pr-ex -w 1 -ca mapreduce.job.tracker=yarn -ca mapreduce.framework.name=yarn -mc org.mdp.hadoop.pr.PageRankAgg
+
+giraph mdp-giraph.jar org.mdp.hadoop.cli.PageRank -eif org.mdp.hadoop.io.TextNullTextEdgeInputFormat -eip /uhadoop/shared/wiki/es-wiki-links.tsv.gz -vof org.mdp.hadoop.io.VertexValueTextOutputFormat -op /uhadoop2025/holaquetal/pr-full -w 4 -ca mapreduce.job.tracker=yarn -ca mapreduce.framework.name=yarn -mc org.mdp.hadoop.pr.PageRankAgg
+
+hadoop jar mdp-giraph.jar SortByRank -D mapreduce.job.reduces=1 /uhadoop2025/holaquetal/pr-full/ /uhadoop2025/holaquetal/pr-full-s/
+
+hdfs dfs -ls /uhadoop2025/holaquetal/pr-full/
+hdfs dfs -cat /uhadoop2025/holaquetal/pr-full/part-m-00000
+
+hdfs dfs -copyToLocal /uhadoop2025/holaquetal/pr-full-s/part-r-00000 /data/2025/uhadoop/holaquetal/ranks.s.tsv
+
+java -jar mdp-lab08.jar BuildWikiIndexBulkWithRank -i /data/uhadoop/shared/wiki/es-wiki-articles.tsv.gz -igz -p /data/2025/uhadoop/holaquetal/ranks.s.tsv -o holaquetal-giraph
+

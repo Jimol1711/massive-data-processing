@@ -10,6 +10,12 @@ Deliverables and files for Lab n.
 
 ---
 
+## Folder: `Project`
+
+Files for the courses project.
+
+---
+
 ## File: `.gitignore`
 
 General purpose gitignore file.
